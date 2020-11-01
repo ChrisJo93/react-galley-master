@@ -19,7 +19,6 @@ class App extends Component {
       url: '/gallery',
     })
       .then((response) => {
-        console.log(response.data);
         this.setState({
           galleryList: response.data,
         });

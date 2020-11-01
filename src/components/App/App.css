@@ -29,5 +29,9 @@
 .gallery-items-container {
   display: inline-block;
   margin: 15px;
-  padding: 1px;
+}
+
+.gallery-items {
+  height: 400px;
+  width: 400px;
 }
