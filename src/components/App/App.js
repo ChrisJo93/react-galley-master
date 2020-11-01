@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
 import './App.css';
-import GalleryItem from './GalleryItem';
+// import GalleryItem from './GalleryItem';
 import GalleryList from './GalleryList';
 
 class App extends Component {
@@ -33,13 +33,6 @@ class App extends Component {
       });
   }
 
-  // likeGallery(){
-  //   Axios({
-  //     method: 'PUT',
-  //     url: '/likes/${',
-  //   })
-  // }
-
   render() {
     return (
       <div className="App">
@@ -48,7 +41,7 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
-        <GalleryItem />
+        {/* <GalleryItem /> */}
         <GalleryList gallery={this.state.galleryList} />
         {/* <img src="images/goat_small.jpg" /> */}
       </div>

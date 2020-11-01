@@ -2,12 +2,20 @@ import Axios from 'axios';
 import React, { Component } from 'react';
 
 class GalleryList extends Component {
-  addLike() {
+  addLike = (event) => {
     Axios({
       method: 'PUT',
-      url: '/like/:id',
-    });
-  }
+      url: `gallery/like/${event.id}`,
+    })
+      .then((response) => {
+        console.log('fuck it');
+        // this.getGallery();
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('SOmething wrong in put');
+      });
+  };
 
   render() {
     const gallery = this.props.gallery.map((item) => {
@@ -16,11 +24,15 @@ class GalleryList extends Component {
           <img src={item.path} />
           {/* <div>{item.description}</div> */}
           <p> </p>
-          <button onClick={this.addLike}>{item.likes}</button>
         </div>
       );
     });
-    return <div>{gallery}</div>;
+    return (
+      <div>
+        <button onClick={this.addLike(item.id)}>{item.likes}</button>
+        <div>{gallery}</div>
+      </div>
+    );
   }
 }
 export default GalleryList;
