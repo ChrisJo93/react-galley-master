@@ -39,7 +39,17 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
-
+        <div>
+          {this.state.galleryList.map((item) => {
+            return (
+              <div key={item.id}>
+                <div>{item.path}</div>
+                <div>{item.description}</div>
+                <div>{item.likes}</div>
+              </div>
+            );
+          })}
+        </div>
         <img src="images/goat_small.jpg" />
       </div>
     );

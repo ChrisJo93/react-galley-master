@@ -21,6 +21,7 @@ const galleryItems = [
     id: 4,
     path: 'images/lordbearon.jpg',
     description: 'Photo of a Brown Grizzly Bear of the Northern United States.',
+    likes: 0,
   },
 ];
 
