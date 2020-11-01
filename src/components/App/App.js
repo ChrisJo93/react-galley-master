@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React, { Component } from 'react';
 import './App.css';
 import GalleryItem from './GalleryItem';
+import GalleryList from './GalleryList';
 
 class App extends Component {
   state = {
@@ -48,17 +49,7 @@ class App extends Component {
         <br />
         <p>Gallery goes here</p>
         <GalleryItem />
-        <div>
-          {this.state.galleryList.map((item) => {
-            return (
-              <div className="gallery" key={item.id}>
-                <img src={item.path} />
-                <div>{item.description}</div>
-                <button>{item.likes}</button>
-              </div>
-            );
-          })}
-        </div>
+        <GalleryList gallery={this.state.galleryList} />
         {/* <img src="images/goat_small.jpg" /> */}
       </div>
     );
