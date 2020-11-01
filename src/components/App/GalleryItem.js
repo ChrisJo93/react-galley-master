@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class GalleryItem extends Component {
   render() {
-    return <p>Not doing anything right now</p>;
+    return (
+      <div className="gallery-items-container">
+        <img src={this.props.item.path} />
+        <button>Likes {this.props.item.likes}</button>
+      </div>
+    );
   }
 }
 

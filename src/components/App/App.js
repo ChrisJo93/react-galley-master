@@ -42,7 +42,7 @@ class App extends Component {
       })
       .catch((err) => {
         console.log(err);
-        alert('SOmething wrong in put');
+        alert('Something wrong in put');
       });
   };
 
