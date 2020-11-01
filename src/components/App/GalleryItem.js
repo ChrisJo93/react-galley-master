@@ -6,9 +6,14 @@ class GalleryItem extends Component {
   };
 
   toggleHandler = () => {
-    this.setState({
-      picToggled: this.state.picToggled === false,
-    });
+    if (this.state.picToggled === true) {
+      this.setState({
+        picToggled: false,
+      });
+    } else
+      this.setState({
+        picToggled: true,
+      });
   };
 
   togglePic = () => {
