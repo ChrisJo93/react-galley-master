@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
 import './App.css';
-// import GalleryItem from './GalleryItem';
 import GalleryList from './GalleryList';
 
 class App extends Component {
@@ -33,6 +32,20 @@ class App extends Component {
       });
   }
 
+  putLikes = (event) => {
+    Axios({
+      method: 'PUT',
+      url: `gallery/like/${event.id}`,
+    })
+      .then((response) => {
+        this.getGallery();
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('SOmething wrong in put');
+      });
+  };
+
   render() {
     return (
       <div className="App">
@@ -41,9 +54,10 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
-        {/* <GalleryItem /> */}
-        <GalleryList gallery={this.state.galleryList} />
-        {/* <img src="images/goat_small.jpg" /> */}
+        <GalleryList
+          gallery={this.state.galleryList}
+          putLikes={this.putLikes}
+        />
       </div>
     );
   }
