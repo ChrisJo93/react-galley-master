@@ -29,7 +29,9 @@ class GalleryItem extends Component {
     } else {
       return (
         <div onClick={this.toggleHandler}>
-          <p>{this.props.item.description}</p>
+          <div className="gallery-description">
+            {this.props.item.description}
+          </div>
         </div>
       );
     }

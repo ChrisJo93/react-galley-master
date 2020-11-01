@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: black;
 }
 
 .App-header {
@@ -34,4 +35,11 @@
 .gallery-items {
   height: 400px;
   width: 400px;
+}
+
+.gallery-description {
+  text-align: center;
+  margin-bottom: 150px;
+  font-size: 19px;
+  color: white;
 }
