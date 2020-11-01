@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
 import './App.css';
+import GalleryItem from './GalleryItem';
 
 class App extends Component {
   state = {
@@ -31,6 +32,13 @@ class App extends Component {
       });
   }
 
+  // likeGallery(){
+  //   Axios({
+  //     method: 'PUT',
+  //     url: '/likes/${',
+  //   })
+  // }
+
   render() {
     return (
       <div className="App">
@@ -39,13 +47,14 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
+        <GalleryItem />
         <div>
           {this.state.galleryList.map((item) => {
             return (
               <div className="gallery" key={item.id}>
                 <img src={item.path} />
                 <div>{item.description}</div>
-                <div>{item.likes}</div>
+                <button>{item.likes}</button>
               </div>
             );
           })}
